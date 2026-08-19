@@ -1,0 +1,359 @@
+/* ===== تنسيقات عامة ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f0f2f5;
+  color: #333;
+  padding: 20px;
+}
+
+/* ===== تنسيقات الفورم ===== */
+.form-renderer {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-renderer h2 {
+  margin-bottom: 8px;
+  color: #1a1a2e;
+  font-size: 24px;
+}
+
+.form-renderer .description {
+  color: #666;
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+
+/* ===== تنسيقات الحقول ===== */
+.field-container {
+  margin-bottom: 20px;
+}
+
+.field-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #333;
+}
+
+.required-star {
+  color: #ff4444;
+  margin-left: 4px;
+}
+
+.field-input,
+.field-select,
+.field-textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  background: white;
+}
+
+.field-input:focus,
+.field-select:focus,
+.field-textarea:focus {
+  outline: none;
+  border-color: #4a90d9;
+  box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.15);
+}
+
+.field-textarea {
+  min-height: 100px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+/* ===== هون تنسيقات الأخطاء ===== */
+.field-error {
+  border-color: #ff4444 !important;
+  background-color: #fff5f5;
+}
+
+.field-error:focus {
+  border-color: #ff4444 !important;
+  box-shadow: 0 0 0 3px rgba(255, 68, 68, 0.15) !important;
+}
+
+.error-message {
+  color: #ff4444;
+  font-size: 13px;
+  margin-top: 5px;
+  display: block;
+}
+
+/* ===== تنسيقات الـ Select ===== */
+.field-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23666' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px;
+}
+
+/* ===== تنسيقات زر الإرسال ===== */
+.submit-btn {
+  background: #4a90d9;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background: #357abd;
+  transform: translateY(-2px);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+/* ===== تنسيقات Responsive ===== */
+@media (max-width: 640px) {
+  .form-renderer {
+    padding: 20px;
+  }
+  
+  .form-renderer h2 {
+    font-size: 20px;
+  }
+}
+
+
+
+
+
+/* ===== تنسيقات FormBuilderUI ===== */
+.form-builder-ui {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.builder-form {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+}
+
+.builder-form .form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.builder-form .form-group label {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.builder-form .form-group input,
+.builder-form .form-group select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.builder-form .checkbox {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.options-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.options-group input {
+  flex: 1;
+  min-width: 120px;
+}
+
+.options-group button {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.options-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.option-tag {
+  background: #e9ecef;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.option-tag button {
+  background: none;
+  border: none;
+  color: #dc3545;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.btn-add {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn-add:hover {
+  background: #218838;
+}
+
+.fields-list {
+  margin: 20px 0;
+}
+
+.field-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background: #f1f3f5;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.field-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.field-type-badge {
+  background: #4a90d9;
+  color: white;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.field-label-display {
+  font-weight: 500;
+}
+
+.required-badge {
+  background: #ff4444;
+  color: white;
+  padding: 1px 8px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.btn-remove {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-remove:hover {
+  background: #c82333;
+}
+
+.json-preview {
+  background: #1e1e1e;
+  color: #d4d4d4;
+  padding: 15px;
+  border-radius: 8px;
+  overflow: auto;
+  max-height: 300px;
+  margin-top: 20px;
+}
+
+.json-preview pre {
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  white-space: pre-wrap;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 640px) {
+  .app-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .form-renderer {
+    padding: 20px;
+  }
+  .form-builder-ui {
+    padding: 15px;
+  }
+}
+/* هون تنسيق نوع الحقل */
+.field-header {
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.field-type-tag {
+  font-size: 11px;
+  color: #6c757d;
+  background: #e9ecef;
+  padding: 1px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.required-star {
+  color: #dc3545;
+  font-weight: bold;
+  font-size: 16px;
+}
